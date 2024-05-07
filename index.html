@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bradley Kirshner: Internet Programming Final: Concepts</title>
+
+<!-- This is a comment line which won't be rendered by any HTML browser -->
+
+
+<style>
+
+.title {
+  background-color: #3aa;
+  color: yellow;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 32px;
+}
+
+.sectionheading {
+  background-color: #a77;
+  color: black;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 18px;
+}
+
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.collapsible:after {
+  content: '\002B';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
+</style>
+
+
+
+
+
+</head>
+
+<body>
+
+  <div class="title"> Bradley Kirshner </div>
+
+  <div class="sectionheading"> Questions</div>
+  
+  <button class="collapsible">1. Is javascript (js) array mutable? array methods filter, indexOf, at, splice and slice. Slice is used to get a new array from the original array whereas the splice is used to add/remove items in the original array. The changes are not reflected in the original array in the case of slice; but for the splice, the changes are reflected in the original array. Show one interesting example showing how to use these methods respectively? </button>
+  <div class="content">
+    <p>JavaScript arrays are mutable. </p>
+      <code>
+        let filteredArray = array.filter(num => num % 2 === 0); 
+      </code>
+    <p>
+    In this example of the filter method, we are setting the variable filteredArray to a version of the array filtered with only even numbers. 
+    </p>
+    <code>let index = array.indexOf(3); </code>
+    <p>  In this example of the indexOf method, we set the variable index to the index of 3 in the array.</p>
+    <code>array.splice(2); </code>
+    <p>  In this example of the splice method, we remove the element at the index of 2.</p>
+    <code>let slicedArray = array.slice(1, 3);</code>
+    <p>  In this example of the slice method, we set the variable slicedArray to the values in index 1 up to index 3 in the array.</p>
+  </div>
+  
+  <button class="collapsible">2. Explain javascript array methods: push, pop, shift and unshift. Show how to use javascript array as queue and stack respectively. </button>
+  <div class="content">
+    <p>The push method adds an element to the end of an array and returns the length of the new array.
+    The pop method removes the last element from an array and returns that element.
+    The shift method removes the first element from an array and returns the new length of the array.
+    The unshift method adds an element to the beginning od an array and returns the new length of the array.
+  </p>
+    <code>	// Array as queue<br>
+    let queue = [];<br>
+      <br>
+    queue.push(1);<br>
+    queue.push(2);<br>
+    queue.push(1);<br>
+      <br>
+    console.log(queue);<br>
+      <br>
+    let dequeued = queue.shift();<br>
+    console.log(dequeued);<br>
+      <br>
+    console.log(queue);<br>
+      <br>
+    // Array as stack<br>
+    let stack = [];<br>
+      <br>
+    stack.push(1);<br>
+    stack.push(2);<br>
+    stack.push(3);<br>
+      <br>
+    console.log(stack);<br>
+      <br>
+    let popped = stack.pop();<br>
+    console.log(popped);<br>
+  
+    console.log(stack);<br>
+  </code>
+  </div>
+  
+  
+  <button class="collapsible">3. show how a js object to describe a student (using three property fname, lname and age), and show an array of 3 student objects.</button>
+  <div class="content">
+  <code>
+    let student1 = { <br>
+      fname: “Brad”, <br>
+      lname: “Kirsh”,<br>
+      age: “20”<br>
+    };<br>
+    let student2 = {<br>
+      fname: “Brad1”,<br>
+      lname: “Kirsh1”,<br>
+      age: “20”<br>
+    };<br>
+    let student3 = {<br>
+      fname: “Brad2”,<br>
+      lname: “Kirsh2”,<br>
+      age: “20”<br>
+    };<br>
+    <br>
+    let students = [student1, student2, student3]<br>
+    console.log(students)
+  </code>
+  </div>
+  
+  <button class="collapsible">5. In CSS, selectors are patterns used to select the element(s) you want to style. What is a compound selector? What is an attribute selector? Provide 8 other selectors that you could use in web application. </button>
+  <div class="content">
+    <p>A compound selector is a selector that combines multiple simple selectors to target a specific element. An attribute selector is a selector that will target an element based on their attribute values. Eight other selectors than you could use in a web application consist of universal selectors, class selectors, ID selectors, child selectors, general sibling selectors, adjacent sibling selectors, pseudo-class selectors, and descendant selectors.</p>
+  </div>
+  
+  <button class="collapsible">7. The difference between a framework and a library lies in a concept called "inversion of control". When you use a library, you are in charge of the flow of the application. You are choosing when and where to call the library. When you use a framework, the framework is in charge of the flow. It provides some places for you to plug in your code, but it calls the code you plugged in as needed. Name two js libraries and two js framework respectively. </button>
+  <div class="content">
+    <p>	Two JavaScript libraries consist of jQuery and express.js. Two JavaScript frameworks consist of react and angular.</p>
+  </div>
+  
+    <button class="collapsible">8. Differentiate javascript, typescript, transpile , ES6/7, node. Is Node a framework? Justify your answer.</button>
+  <div class="content">
+    <p>JavaScript is a programming language that is used for web development to create interactive web pages.
+    Typescript is a superset of JavaScript that adds static typing to the language.
+    Transpile is the process of converting code from one programming language to another.
+    ES6 and ES7 are versions of ECMAScript, which the standard of JavaScript is based on.
+    Node is a runtime environment for executing JavaScript code outside of a web browser.
+  </p>
+    <p>Node is not a framework. It provides the runtime for executing JavaScript code on the server side instead of the web browser. It allows developers to build server-side applications using JavaScript, but it is not a framework.</p>
+  </div>
+  
+    <button class="collapsible">9. Differentiate CSS, javascript, node, npm, and expressjs. </button>
+  <div class="content">
+    <p>
+      CSS is used for styling HTML elements on a web page. 
+      JavaScript is used to make web pages interactive and is also used for server side development.
+      Node is a runtime environment used for executing JavaScript code on the server side.
+      Npm is a package manager for node, which is used to manage dependencies.
+      Express.js is a framework for node, which provides features for building APIs and web servers.
+  </p>
+  </div>
+  
+    <button class="collapsible">10.Explain, yarn, npm, nvm, npx, package.json and package-lock.json files </button>
+  <div class="content">
+    <p>Yarn and npm are package managers used for managing dependencies in node.js.
+      Nvm is used to manage multiple versions of node.js on a system.
+      Npx is used for executing node.js packages directly from the command line.
+      Package.json is a file used to contain dependency information and configuration.
+      Package-lock.json is a file generated by npm that stores the versions of dependencies used in a project.
+  </p>
+  </div>
+  
+    <button class="collapsible">11. Read the template file for this assignment, there is javascript statement: this.classList.toggle("active"); what does this mean? </button>
+  <div class="content">
+    <p>In the template file for this assignment, when an element with the class name “collapsible” is clicked, the “active” class is toggled on that element. This will trigger a change that will collapse the element.</p>
+  </div>
+  
+    <button class="collapsible">12. What are Google Material Design and MUI Material UI? </button>
+  <div class="content">
+    <p>Google Material Design is a design language that is developed by google. It aims to create a unified user experience across platforms and devices. It offers a set of UI components that are designed to be customizable and reusable to make it easier for developers to create consistent UIs. It is widely used across Google’s products and services.
+    MUI is a popular react framework that follows Google’s Material Design guidelines. It gives developers a set of customizable react components. These components are customizable and can be integrated into react applications easily. MUI is built on top of react making it highly flexible and suitable for building web applications. MUI has a large and active community of developers.
+  </p>
+  </div>
+  
+    <button class="collapsible">13. What are AJAX, XMLHttpRequest (XHR) object, fetch and promise, respectively? Identify 3 properties and 3 methods.</button>
+  <div class="content">
+    <p>AJAX is a technique for creating dynamic and interactive web applications by sending and receiving data from a web server asynchronously without requiring the entire page to reload. Three AJAX properties include onload, readyState, and status. Three AJAX methods include abort(), getResponseHeader(), and send().
+    The XMLHttpRequest object is a built in JavaScript API. It provides methods and properties for making HTTP request from the client-side JavaScript code. Three XMLHttpRequest object properties include readyState, responseText, and status. Three XMLHttpRequest object methods include open(), send(), setRequestHeader().
+    Fetch is a modern JavaScript API for making HTTP requests. It provides a more flexible alternative to the XMLHttpRequest object. Three fetch properties include status, statusText, ok. Three fetch methods include fetch(), json(), and text().
+    Promises are objects that represent the eventual completion or failure of an asynchronous operation. They provide a more intuitive way of working with asynchronous code. Three promise properties include state, value, and error. Three promise methods include then(), catch(), and finally().
+  </p>
+  </div>
+  
+    <button class="collapsible">15. Differences among CSS, LESS, SASS (Syntactically Awesome Stylesheet) </button>
+  <div class="content">
+    <p>CSS is the standard style sheet language used for styling web pages.
+      LESS is an extension of CSS; it is a dynamic style sheet language that adds additional features to CSS such as variables and functions.
+      SASS is an extension of CSS that introduces advanced features such as nesting and inheritance.
+  </p>
+  </div>
+  
+    <button class="collapsible">16. Responsive Web design (RWD) is the approach that suggests that design and development should respond to the user's behavior and environment based on screen size, platform and orientation. Explain Media Queries and viewport and grid layout, flexbox. </button>
+  <div class="content">
+    <p>Media queries allow for the application of styles based on the characteristics of the user’s device.
+    Viewport is a meta tag that controls the width and scaling of the viewport.
+    Grid layout gives a two-dimensional grid system for creating responsive and flexible layouts.
+    Flexbox gives an efficient way to design and align elements in a container.
+  </p>
+  </div>
+  
+    <button class="collapsible">17. arrow functions in 3 different cases </button>
+    <div class="content">
+      <code>
+        const add = (a, b) => { return a + b }; <br>
+        const sayHello = () => { console.log(“Hello”) }; <br>
+        const subtract = (a, b) => { return a – b }; <br>
+      </code>
+    </div>
+  
+      <button class="collapsible">19. MongoDB is a schema-less NoSQL document oriented database. Define the following concepts: nosql, schema, collection, document, database? </button>
+  <div class="content">
+    <p>NoSQL databases give flexible storage solutions for dealing with data.
+    Schema defines the organization of data stored in a database.
+    Collections are groups of documents stored in MongoDB.
+    Documents are instances of data recorded in MongoDB collections with JSON structures.
+    Databases hold collections of related data.
+  </p>
+  </div>
+  
+      <button class="collapsible">20. MongoDB Query Language (MQL) how to insert one, delete one, update one and retrieve all, and search student documents, and how to increase the grade of a student by 5. For delete and search, the criteria is by firstname field and a specific value. Assume the following properties for student collection {firstname:’bill’, lastname:’clinton’, grade:80} </button>
+  <div class="content">
+  <code>
+    insertOne({ firstname: ‘bill’, lastname: ‘clinton’, grade: 80, }); <br>
+    deleteOne({ firstname: ‘bill’ }); <br>
+    updateOne( { firstname: ‘bill’ }, { $set: { grade: 85 }, } ); <br>
+    find(); <br>
+    find({ firstname: ‘bill’ });<br>
+    updateOne({ firstname: ‘bill’ }, { $inc: { grade: 5 } });<br>
+  </code>
+  </div>
+  
+      <button class="collapsible">21. HTTP protocols, methods, request and reponse messages, and message header fields ( https://en.wikipedia.org/wiki/List_of_HTTP_header_fields), response status codes. </button>
+  <div class="content">
+    <p>HTTP is a protocol that is used to transmit documents over the internet. The current version is HTTP/1.1 but there are newer versions such as HTTP/2 and HTTP/3.
+      HTTP has request methods to indicate the action wanted to be performed on the server. Some common HTTP methods consist of GET, POST, PUT, DELETE, etc.
+      HTTP communication involves request made from clients to servers and responses from servers to clients. 
+      HTTP headers provide metadata about the HTTP message. Some common header fields consist of Content-Type, Content-Length, Cache-Control, User-Agent, etc.
+      Response status codes indicate the outcome of a clients request to the server. Some common response status codes consist of 100 codes, 200 codes, 300 codes, 400 codes, and 500 codes.
+  </p>
+  </div>
+  
+      <button class="collapsible">22. What is restful services? What is restful API endpoints? What is routing?restful api, client, clean url </button>
+  <div class="content">
+    <p>RESTful services enable clients to perform CRUD operations on server resources using standard HTTP methods. REST stands for representational state transfer.
+    RESTful API endpoints are URLs that represent resources on the server. They define the entry points for interacting with those resources. 
+    Routing is the process of determining how an incoming HTTP request should be handled and which code should be executed to generate the appropriate response. Routing lets developers define the structure and behavior of web applications by directing request to the appropriate resources. 
+    Clean URLs are user friendly URLs. They are easy for humans to read. Clean URLs improve usability for users by giving them clear and descriptive links.
+    Resources are an object or data entity that can be accessed and sometimes modifiable by clients through the API. 
+    Endpoints are specific URLs in a RESTful API that correspond to a particular resource or collection of resources.
+  </p>
+  </div>
+  
+      <button class="collapsible">23. The primary or most commonly-used HTTP methods are POST, GET, PUT, PATCH, and DELETE, options, head, trace and connect. Define each of them. </button>
+  <div class="content">
+    <p>	The POST method is used to submit data to the server.
+    The GET method is used to request data from a server.
+    The PUT method is used to update data or submit new data if it does not exist.
+    The PATCH method is used to apply partial modifications to a resource.
+    The DELETE method is used to delete a specified resource.
+    The OPTIONS method is used to describe the communication options for the specified resource.
+    The HEAD method is used to ask for a GET request, but without the response body.
+    The TRACE method is used to perform a message loop-back test along the path to the specified resource.
+    The CONNECT method is used to establish a tunned to the server identified by the specified resource.
+  </p>
+  </div>
+  
+      <button class="collapsible">24. What are Javascript object, json string, JSON.parse vs. JSON.stringify, respectively? </button>
+  <div class="content">
+    <p>	A JavaScript object is a data structure that uses key-value pairs.
+    A JSON string is a representation of JSON data in a string.
+    JSON.parse is a method that parses a JSON string into a JavaScript object.
+    JSON.stringify is a method that turns a JavaScript object into a JSON string.
+  </p>
+  </div>
+  
+      <button class="collapsible">25. Cross-origin resource sharing (CORS) is a mechanism that allows restricted resources on a web page to be requested from another domain outside the domain from which the first resource was served. A web page may freely embed cross-origin images, stylesheets, scripts, iframes, and videos. What is same-origin policy? </button>
+  <div class="content">
+    <p>	The same-origin policy is a security feature that is implemented by web browsers to restrict how a document or script loaded from one origin can interact with resources from another origin. This policy helps to prevent malicious scripts from accessing sensitive data or performing unauthorized actions on behalf of users.</p>
+  </div>
+  
+      <button class="collapsible">26. Each component in React has a lifecycle which you can monitor and manipulate during its three main phases. The three phases are: Mounting, Updating, and Unmounting. Explain each of these three phases are about. </button>
+  <div class="content">
+    <p>The mounting phase is when a component is being initialized and inserted into the DOM for the first time.
+    The updating phase is when a component’s state or props change causing a re-render.
+    The unmounting phase is when a component is being removed from the DOM.
+  </p>
+  </div>
+  
+      <button class="collapsible">27. react Hooks allow function components to have access to state and other React features (such as lifecycle methods). Briefly explain the purpose of each of the following hooks: useState, useEffect, useContext, useRefuse, Reducer, useCallback useMemo</button>
+  <div class="content">
+    <p>useState allows function components to have a local state. It returns a stateful value and a function to update that value. This allows for components to manage state without using class components.
+    useEffect is used to perform side effects in function components. It runs after every render and can handle asynchronous operations, subscriptions, timers, etc.
+    useContext provides a way to consume values from the React context without nesting. It allows function components to access context values that were higher up in the component tree.
+    useRef returns a mutable ref object whose current property is initialized to the passed argument. It allows components to keep mutable values that persist between renders without causing re-renders.
+    useReducer is an alternative to useState for managing complex state logic. It accepts a reducer function and an initial state and returns the current state and a dispatch function. It is usually used for managing state transitions in components with multiple actions and complex state logic.	
+    useCallback is used to memorize functions in function components. It returns a memorized version of the callback function that only changes if one of the dependencies is changed. It is useful for optimizing performance by preventing unnecessary re-renders of child components.
+    useMemo is like useCallback but for memorizing computed values. It memorizes the result of the function and re-computes it only when one of the dependencies has changed. It is useful for optimizing performance by memorizing expensive calculations or data transformations.
+  </p>
+  </div>
+  
+      <button class="collapsible">28. React components, state, props, jsx,, virtual DOM, render </button>
+  <div class="content">
+    <p>React components are reusable modules that contain UI logic.
+    State represents the internal data of a component and allows for dynamic updates.
+    Props are used to pass data from parent components to child components.
+    JSX is a syntax extension for JavaScript that allows for syntax like HTML in React components.
+    Render is a method that is used in React components to generate the UI based on state and props.
+  </p>
+  </div>
+  
+    <button class="collapsible">29. What are the main purposes of redux, RTK, and RTK-query, rxjs, yjs respectively? </button>
+    <div class="content">
+      The main purpose of redux is to help manage complex state logic. It enables predictable state mutations through actions and reducers.
+      The main purpose of RTK is to simplify redux development and make it more efficient. It introduces utilities like configureStore, createSlice, and createAsyncThunk to streamline common redux patterns.
+      The main purpose of RTK-query is to make enhance application performance by simplifying complex data fetching logic. It offers a declarative API for defining API endpoints, automatic caching and invalidation, etc.
+      The main purpose of RxJS is to help developers work with asynchronous data streams.  It provides a composable API for working with observables, which represent asynchronous data streams that can emit multiple values over time.
+      The main purpose of Yjs is to help build real time collaborative applications. It provides data synchronization and conflict resolution algorithms for shared data structures, enabling multiple users to collaborate on the same document or application in real time.
+  
+    </div>
+
+<div class="title"> Top 6 most useful concepts I have learned from each of the six components</div>
+</div>
+
+<div class="sectionheading"> PowerBI (Feel free to skip this part. I did it as an example! Focus on the rest of the sections!)</div>
+
+<button class="collapsible">What is PowerBI?</button>
+<div class="content">
+  <p>Power BI is a business analytics solution that lets you?visualize?your data and share insights across your organization, or embed them in your app or website. Connect to hundreds of data sources and bring your data to life with live dashboards and reports.</p>
+</div>
+
+<button class="collapsible">What is data wrangling? </button>
+<div class="content">
+  <p> Data wrangling, sometimes referred to as data munging, is the process of transforming and mapping data from one "raw" data form into another format with the intent of making it more appropriate and valuable for a variety of downstream purposes such as analytics.</p>
+</div>
+
+<button class="collapsible">What data sources can Power BI connect to? </button>
+<div class="content">
+	<p>The list of data sources for Power BI is extensive, grouped into the following:
+		<ol>
+			<li>Files: Data can be imported from Excel (.xlsx, xlxm), Power BI Desktop files (.pbix) and Comma Separated Value (.csv). </li>
+			<li>Content Packs: It is a collection of related documents or files that are stored as a group. In Power BI, there are two types of content packs, firstly those from services providers like Google Analytics, Marketo or Salesforce and secondly those created and shared by other users in your organization. </li>
+			<li>Connectors to databases and other datasets such as Azure SQL, Databaseand SQL, Server Analysis Services tabular data, etc.</li>
+		</ol>
+		</p>
+
+</div>
+
+<button class="collapsible">What is DAX?</button>
+<div class="content">
+  <p>To do basic calculation and data analysis on data in power pivot, we use Data Analysis Expression (DAX). It is formula language used to compute calculated column and calculated field. DAX works on column values.
+DAX can not modify or insert data. We can create calculated column and measures with DAX  but we can not calculate rows using DAX.</p>
+</div>
+
+<button class="collapsible">What is Power Query? </button>
+<div class="content">
+  <p>Power query is a ETL Tool used to shape, clean and transform data using intuitive interfaces without having to use coding. It helps the user to: Import Data from wide range of sources from files, databases, big data, social media data, etc;
+join and append data from multiple data sources. Shape data as per requirement by removing and adding data.</p>
+</div>
+
+<button class="collapsible">Which language is used in Power Query? </button>
+<div class="content">
+  <p>A new programming language is used in power query called M-Code. It is easy to use and similar to other languages. M-code is case sensitive language.</p>
+</div>
+
+
+<div class="sectionheading"> Front End Web App Development</div>
+
+<button class="collapsible">HTML</button>
+<div class="content">
+  <p>A markup for creating a webpage</p>
+</div>
+
+<button class="collapsible">CSS</button>
+<div class="content">
+  <p> CSSÂ stands for Cascading Style Sheets.Â CSSÂ describes how HTML elements are to be displayed on screen, paper, or in other media.Â CSSÂ saves a lot of work. It can control the layout of multiple web pages all at once</p>
+</div>
+
+<button class="collapsible">Javascript </button>
+<div class="content">
+  <p>an object-oriented computer programming language commonly used to create interactive effects within web browsers</p>
+</div>
+
+
+<!-- start from here, Copy the following lines and paste for Excel, Access and PPT under the end --> 
+<div class="sectionheading"> Excel Concepts</div>
+
+<button class="collapsible">conditional formatting</button>
+<div class="content">
+    <p>Brings out the patterns of the universe, as captured by your spreadsheet</p>
+</div>
+
+<button class="collapsible">Data Filtering</button>
+<div class="content">
+    <p>Narrow down data based on specific criteria.</p>
+</div>
+
+<button class="collapsible">Sorting and Filtering</button>
+<div class="content">
+    <p>Saves time and makes spreadsheet more effective.</p>
+</div> 
+
+<button class="collapsible">Basic Math</button>
+<div class="content">
+    <p>Performs arithmetic operations within your spreadsheet.</p>
+</div>
+
+<button class="collapsible">Excel Charts </button>
+<div class="content">
+    <p>Visual representations of data for better understanding.</p>
+</div>
+  
+<button class="collapsible">Excel Formulas</button>
+<div class="content">
+    <p>Automates calculations and data processing.</p>
+</div>
+
+<div class="sectionheading"> Access Concepts</div>
+
+
+<button class="collapsible">Importing & Exporting of other Microsoft Office</button>
+<div class="content">
+    <p>Exchange data between Access and other Office applications.</p>
+</div>
+
+<button class="collapsible">Ideal for Indivdual users</button>
+<div class="content">
+    <p>Tailored for personal database management needs.</p>
+</div>
+  
+<button class="collapsible">Creates and Manages databases</button>
+<div class="content">
+    <p>Build and maintain databases efficiently.</p>
+</div>
+
+<button class="collapsible">Web Database publishing</button>
+<div class="content">
+    <p>Share databases online for collaborative use.</p>
+</div>
+ 
+<button class="collapsible">User friendly, "Tell Me" Feature </button>
+<div class="content">
+    <p>Works like an assistant, helps users complete task on hand quickly</p>
+</div>
+
+<button class="collapsible">Report View</button>
+<div class="content">
+    <p>Present database information in structured reports.</p>
+</div>
+  
+
+<div class="sectionheading"> PPT Concepts</div>
+
+<button class="collapsible">Formatting</button>
+<div class="content">
+    <p>Customize the appearance of your presentation slides.</p>
+</div>
+
+<button class="collapsible">Presentation Playback</button>
+<div class="content">
+    <p>Control the playback of your presentation.</p>
+</div>
+
+<button class="collapsible">Backstage View</button>
+<div class="content">
+    <p> Manage file-related tasks such as saving, printing, and sharing.</p>
+</div>
+
+<button class="collapsible">SmartArt Diagram</button>
+<div class="content">
+    <p>Create visually appealing diagrams to illustrate concepts.</p>
+</div>
+
+<button class="collapsible">Transitions & Animations</button>
+<div class="content">
+    <p>Enhance presentation flow and engagement.</p>
+</div>
+
+<button class="collapsible">Cropping Images</button>
+<div class="content">
+    <p>Modify images to fit your presentation needs.</p>
+</div>
+
+<div class="sectionheading"> Word Concepts</div>
+
+<button class="collapsible">style</button>
+<div class="content">
+    <p> Define consistent formatting for text elements.</p>
+</div>
+
+<button class="collapsible">template</button>
+<div class="content">
+    <p>Pre-designed document format for easy document creation.</p>
+</div>
+
+<button class="collapsible">Contextual Tabs</button>
+<div class="content">
+    <p>Dynamically appear based on the task being performed.</p>
+</div>
+
+<button class="collapsible">Nonprinting character</button>
+<div class="content">
+    <p>Characters that are not displayed but affect formatting.</p>
+</div>
+
+<button class="collapsible">Edit mode </button>
+<div class="content">
+    <p>Mode enabling direct editing of text.</p>
+</div>
+
+<button class="collapsible">Tab stop and Tab Key</button>
+<div class="content">
+    <p> Controls for aligning and navigating text within a document.</p>
+</div>
+<!-- end here, Copy -->
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+</body>
+</html>
+<!-- Hello World! -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/17.0.2/umd/react.development.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.2/umd/react-dom.development.js"></script>
+
+<div id="root"></div>
+
+<script>
+
+    /*
+const Example = () => {
+    return React.createElement("div", null, "Hello, React!");
+};
+    
+ReactDOM.render(React.createElement(Example), document.getElementById("root"));
+*/
+    
+    
+const root = ReactDOM.createRoot(document.getElementById('root'));
+    
+root.render(<h1>Hello, worlddddddd!</h1>);
+
+    
+</script>
+
